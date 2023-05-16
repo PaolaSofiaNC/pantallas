@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:pantallas/db/db_consultar.dart';
+import 'package:isar/isar.dart';
+import 'package:pantallas/db/db_insertar.dart';
 
+import '../db/db_helper.dart';
 import '../models/usuario.dart';
 import 'consultas.dart';
 
@@ -14,19 +16,14 @@ class _RegistroState extends State<Registro> {
   TextEditingController nombreController = TextEditingController();
   TextEditingController correoController = TextEditingController();
 
-  Usuario? newUser;
+  late Usuario newUser;
 
   @override
   void initState() {
     super.initState();
-    newUser = Usuario(
-        id: 1, nombre: nombreController.text, email: correoController.text);
   }
 
-  void _guardarDatos() {
-    newUser = Usuario(
-        id: 1, nombre: nombreController.text, email: correoController.text);
-  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -128,7 +125,9 @@ class _RegistroState extends State<Registro> {
                 child: ElevatedButton(
                   onPressed: () {
                     print("entra");
-                    _guardarDatos();
+                    DatabaseIsar().openIsar();
+                    print(nombreController.text);
+                    print(correoController.text);
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => Consultas()));
                   },

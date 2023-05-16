@@ -7,3 +7,4 @@ class Consultar {
     final existingUser = await isar.usuarios.get(newUser.id);
   }
 }
+

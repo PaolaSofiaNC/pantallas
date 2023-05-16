@@ -9,14 +9,29 @@ class Consultas extends StatefulWidget {
 }
 
 class _ConsultasState extends State<Consultas> {
-  final existingUser = "";
-  _getDatosCliente() async {
-    Future<void> insertarUsuario(Isar isar, Usuario newUser) async {
-      final existingUser = await isar.usuarios.get(newUser.id);
-    }
+  List<Usuario> existingUsers = [
+    Usuario(id: 6748, nombre: "Abril", email: "Abril@gmail.com")
+  ];
 
-    setState(() {});
+  @override
+  void initState() {
+    super.initState();
+    _getDatosCliente();
   }
+
+Future<void> _getDatosCliente() async {
+  print("Obteniendo Datos");
+  
+  final isar = Isar.getInstance();
+  
+  final users = isar?.usuarios.filter();
+  
+  setState(() {
+    if (users != null){
+      existingUsers = users as List<Usuario>;
+    }
+  });
+}
 
   @override
   Widget build(BuildContext context) {
@@ -42,13 +57,11 @@ class _ConsultasState extends State<Consultas> {
             children: [
               Expanded(
                 child: ListView.builder(
-                  itemCount: existingUser.length,
+                  itemCount: existingUsers.length,
                   itemBuilder: (context, index) {
-                    final usuario = existingUser[index];
-                    return GestureDetector(
-                      onTap: () {
-                        print("Mostrar");
-                      },
+                    final user = existingUsers[index];
+                    return ListTile(
+                      title: Text(user.nombre.toString()), 
                     );
                   },
                 ),
