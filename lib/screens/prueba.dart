@@ -38,12 +38,12 @@ class Prueba extends StatelessWidget {
                 ),
                 Column(
                   children: [
-                    SizedBox(height: maxHeight*0.10),
+                    SizedBox(height: maxHeight * 0.10),
                     Image.asset(
                       'assets/flower-logo.png',
                       height: maxHeight * 0.2,
                       width: maxWidth * 0.3,
-                      fit:BoxFit.cover,
+                      fit: BoxFit.cover,
                     ),
                     ShaderMask(
                       blendMode: BlendMode.srcIn,
@@ -66,7 +66,7 @@ class Prueba extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(height: maxHeight*0.05),
+                    SizedBox(height: maxHeight * 0.04),
                     Container(
                       width: maxWidth * 0.9,
                       height: maxHeight * 0.06,
@@ -94,7 +94,7 @@ class Prueba extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(height: maxHeight*0.05),
+                    SizedBox(height: maxHeight * 0.04),
                     Container(
                       width: maxWidth * 0.9,
                       height: maxHeight * 0.06,
@@ -122,7 +122,7 @@ class Prueba extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(height: maxHeight*0.05),
+                    SizedBox(height: maxHeight * 0.04),
                     Container(
                       width: maxWidth * 0.9,
                       height: maxHeight * 0.06,
@@ -150,7 +150,7 @@ class Prueba extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(height: maxHeight*0.05),
+                    SizedBox(height: maxHeight * 0.04),
                     Container(
                       width: maxWidth * 0.9,
                       height: maxHeight * 0.06,
@@ -202,7 +202,7 @@ class Prueba extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(height: maxHeight*0.05),
+                    SizedBox(height: maxHeight * 0.04),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
